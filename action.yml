@@ -1,0 +1,15 @@
+name: 'Run Script'
+description: 'Run a Python Script'
+inputs:
+  scriptname:
+    description: 'Python Script to Run'
+    require: true
+    default: './'
+outputs:
+  result:
+    description: 'The result of the script run'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+    args:
+      - ${{ inputs.scriptname }}
