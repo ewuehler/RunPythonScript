@@ -1,6 +1,10 @@
 name: 'Run Script'
 description: 'Run a Python Script'
 inputs:
+  rootfolder:
+    description: 'The folder where the script exists'
+    require: true
+    default: './'
   scriptname:
     description: 'Python Script to Run'
     require: true
@@ -12,4 +16,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.rootfolder }}    
     - ${{ inputs.scriptname }}
