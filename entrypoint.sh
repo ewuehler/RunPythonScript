@@ -1,7 +1,9 @@
 #!/bin/sh -l
 
-SCRIPTNAME=$1
+ROOTFOLDER=$1
+SCRIPTNAME=$2
 
+cd $ROOTFOLDER
 result=$(python3 $SCRIPTNAME)
 
 echo ::set-output name=result::$result
